@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Quiz } from "../../domain/quiz.model";
 
 @Component({
   selector: 'app-quiz-list-element',
@@ -6,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './quiz-list-element.component.scss'
 })
 export class QuizListElementComponent {
-
+  @Input() public quiz: Quiz;
 }
