@@ -1,9 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AppComponent } from "./app.component";
+import { QuizListComponent } from "./quiz-list/quiz-list.component";
 
 const routes: Routes = [
-  { path: '', component: AppComponent }
+  { path: '', redirectTo: 'quiz', pathMatch: "full" },
+  { path: 'quiz', component: QuizListComponent }
 ];
 
 @NgModule({
