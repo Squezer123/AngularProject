@@ -1,9 +1,9 @@
 export enum Kategoria {
-  FILMY,
-  SERIALE,
-  KSIAZKI,
-  HISTORIA,
-  MODA,
-  KULINARIA,
-  MOTORYZACJA
+  FILMY = 'Filmy',
+  SERIALE = 'Seriale',
+  KSIAZKI = 'Książki',
+  HISTORIA = 'Historia',
+  MODA = 'Moda',
+  KULINARIA = 'Kulinaria',
+  MOTORYZACJA = 'Motoryzacja'
 }
