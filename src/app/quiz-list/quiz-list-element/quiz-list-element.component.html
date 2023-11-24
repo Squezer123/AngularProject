@@ -4,5 +4,5 @@
   <p>Liczba pytań: {{ quiz.pytania.length }}</p>
   <p>Wygasa: {{ quiz.dataWygasniecia }}</p>
 
-  <button type="button" class="delete-button">Usuń quiz</button>
+  <button type="button" class="delete-button" (click)="deleteQuiz()">Usuń quiz</button>
 </div>
