@@ -84,4 +84,11 @@ export class QuizService {
     ),
   ]
 
+  deleteQuizById(id: number) {
+    let index = this.quizy.findIndex(quiz => quiz.id === id)
+
+    if(index !== -1) {
+      this.quizy.splice(index, 1)
+    }
+  }
 }
