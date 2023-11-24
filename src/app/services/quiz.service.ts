@@ -5,6 +5,7 @@ import { Pytanie } from "../domain/pytanie.model";
 
 @Injectable({ providedIn: 'root' })
 export class QuizService {
+  id: number = 1;
   quizy: Quiz[] = [
     new Quiz(
       1,
@@ -83,5 +84,7 @@ export class QuizService {
       ]
     ),
   ]
-
+  addQuiz(nazwa,kategoria,dataWygasniecia,pytania) {
+    this.quizy.push(new Quiz(this.id++,nazwa,kategoria,dataWygasniecia,pytania));
+  }
 }
