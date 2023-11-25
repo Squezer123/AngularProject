@@ -1,1 +1,8 @@
-<p>quiz-conductor works!</p>
+<div class="container">
+  <h1 class="pytanie-tresc">{{ aktualnePytanie.tresc }}</h1>
+  <div class="odpowiedzi-container">
+    <div *ngFor="let odpowiedz of aktualnePytanie.odpowiedzi">
+      {{ odpowiedz }}
+    </div>
+  </div>
+</div>

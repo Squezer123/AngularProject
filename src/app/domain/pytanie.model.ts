@@ -1,11 +1,21 @@
 export class Pytanie {
 
-  constructor(private tresc: String,
-              private odpowiedzi: String[],
+  constructor(private _tresc: String,
+              private _odpowiedzi: String[],
               // PoprawnaOdpowiedz indeksujemy od 0
               // Czyli może mieć wartość z przedziału od 0 do 3
-              private poprawnaOdpowiedz: number) {
+              private _poprawnaOdpowiedz: number) {
   }
 
+  get tresc() {
+    return this._tresc;
+  }
 
+  get odpowiedzi() {
+    return this._odpowiedzi;
+  }
+
+  get poprawnaOdpowiedz() {
+    return this._poprawnaOdpowiedz;
+  }
 }

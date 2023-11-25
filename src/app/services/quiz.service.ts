@@ -85,7 +85,7 @@ export class QuizService {
   ]
 
   findQuizById(id: number): Quiz {
-    return this.quizy.find(quiz => quiz.id === id);
+    return this.quizy.find(quiz => quiz.id === id)
   }
 
   deleteQuizById(id: number) {
