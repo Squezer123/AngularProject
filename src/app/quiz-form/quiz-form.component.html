@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>fewwfewfwe</h1>
+  <form [formGroup]="form" (ngSubmit)="register()">
+    <label>Podaj nazwe</label><br>
+    <input type="text" formControlName="nazwa"><br>
+    <div *ngIf="nazwa.invalid && (nazwa.dirty || nazwa.touched)" class="error-message">Nazwa jest wymagana</div>
+    <label>Wybierz kategorie</label><br>
+    <select formControlName="kategoria">
+      <option *ngFor="let kategoriaEl of kategorie" [value]="kategoriaEl">{{kategoriaEl}}</option>
+    </select><br>
+    <label>Wybierz date wygaśnięcia</label><br>
+    <input type="date" formControlName="dataWygasniecia"><br>
+
+    <ng-container formArrayName="pytania">
+      <ng-container *ngFor="let pytanieForm of pytania.controls; let i=index" [formGroupName]="i">
+          <label>Podaj treść</label><br>
+          <input type="text" formControlName="tresc"><br>
+          <label>Podaj odpowiedzi</label><br>
+          <input type="text" formControlName="odp1"><br>
+          <input type="text" formControlName="odp2"><br>
+          <input type="text" formControlName="odp3"><br>
+          <input type="text" formControlName="odp4"><br>
+          <label>Podaj numer poprawnej odpowiedzi</label><br>
+          <input type="number" [disabled]="form.invalid" formControlName="nrPoprawnejOdp"><br>
+      </ng-container>
+    </ng-container>
+
+    <button type="button" (click)="addPytanie()">Dodaj pytanie</button>
+    <button type="submit" [disabled]=form.invalid>Wyślij</button>
+  </form>
+</div>
