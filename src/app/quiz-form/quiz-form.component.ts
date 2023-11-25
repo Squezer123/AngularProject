@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
+import { startsWithUppercase } from '../validators/custom-validators';
 import { Kategoria } from "../domain/kategoria.enum";
 import { QuizService } from "../services/quiz.service";
 import {Router} from "@angular/router";
@@ -19,7 +20,7 @@ export class QuizFormComponent {
 
     this.form = this.fb.group({
       nazwa: new FormControl('', [Validators.required, Validators.minLength(3),
-        Validators.maxLength(50)]),
+        Validators.maxLength(50),startsWithUppercase]),
       kategoria: new FormControl('', Validators.required),
       dataWygasniecia: new FormControl('', Validators.required),
       pytania: this.fb.array([], Validators.required)

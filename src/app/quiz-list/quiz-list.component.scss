@@ -4,7 +4,7 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  background: deepskyblue;
+  background: #313866;
   text-align: center;
   padding: 2rem;
   color: whitesmoke;
@@ -13,10 +13,36 @@
 }
 .options {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
-.SelectQuiz {
-  margin: auto;
+h1{
+  color: #974EC3;
 }
-.AddQuiz {
-  margin: auto;
+.options h2{
+  color: #974EC3;
+  padding: 0 10px;
+}
+
+button{
+  position: absolute;
+  top: 20px;
+  right: 100px;
+  background-color: #504099;
+  height: 50px;
+  font-size: 1rem !important; 
+  color: white;
+  border: none;
+  border-radius: 14px;
+  margin: 0;
+  padding: 10px 20px;
+  text-align: inherit;
+  font: inherit;
+}
+
+button:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: 2px 2px 2px black;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, cursor 0.3s ease-in-out;
 }

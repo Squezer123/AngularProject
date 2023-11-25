@@ -1,8 +1,8 @@
 <div class="container">
   <h1>Quizy.pl</h1>
   <div class="options">
-    <h2 class="SelectQuiz">Wybierz quiz</h2>
-    <router-outlet class="AddQuiz"><h2 (click)="click()">Dodaj quiz</h2></router-outlet>
+    <h2 class="SelectQuiz">Dostepne quizy:</h2>
+    <router-outlet class="AddQuiz"><button (click)="click()">Dodaj quiz</button></router-outlet>
   </div>
 
   <app-quiz-list-element *ngFor="let quiz of quizy" [quiz]="quiz"></app-quiz-list-element>
