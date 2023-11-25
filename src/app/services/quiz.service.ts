@@ -5,6 +5,7 @@ import { Pytanie } from "../domain/pytanie.model";
 
 @Injectable({ providedIn: 'root' })
 export class QuizService {
+  id: number = 1;
   quizy: Quiz[] = [
     new Quiz(
       1,
@@ -83,6 +84,9 @@ export class QuizService {
       ]
     ),
   ]
+  addQuiz(nazwa,kategoria,dataWygasniecia,pytania) {
+    this.quizy.push(new Quiz(this.id++,nazwa,kategoria,dataWygasniecia,pytania));
+
 
   findQuizById(id: number): Quiz {
     return this.quizy.find(quiz => quiz.id === id)
@@ -94,5 +98,6 @@ export class QuizService {
     if(index !== -1) {
       this.quizy.splice(index, 1)
     }
+
   }
 }

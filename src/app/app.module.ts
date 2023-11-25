@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { QuizListComponent } from './quiz-list/quiz-list.component';
 import { QuizListElementComponent } from './quiz-list/quiz-list-element/quiz-list-element.component';
+import { QuizFormComponent } from './quiz-form/quiz-form.component';
+import { ReactiveFormsModule } from "@angular/forms";
 import { QuizConductorComponent } from './quiz-conductor/quiz-conductor.component';
 
 @NgModule({
@@ -12,11 +14,13 @@ import { QuizConductorComponent } from './quiz-conductor/quiz-conductor.componen
     AppComponent,
     QuizListComponent,
     QuizListElementComponent,
+    QuizFormComponent,
     QuizConductorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
