@@ -5,7 +5,6 @@ import { Pytanie } from "../domain/pytanie.model";
 
 @Injectable({ providedIn: 'root' })
 export class QuizService {
-  id: number = 1;
   quizy: Quiz[] = [
     new Quiz(
       1,
@@ -84,6 +83,7 @@ export class QuizService {
       ]
     ),
   ]
+  id: number = this.quizy.length+1;
 
   findQuizById(id: number): Quiz {
       return this.quizy.find(quiz => quiz.id === id)
