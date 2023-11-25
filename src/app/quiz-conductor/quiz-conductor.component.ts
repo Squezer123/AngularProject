@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Quiz } from "../domain/quiz.model";
 import { QuizService } from "../services/quiz.service";
 import { Pytanie } from "../domain/pytanie.model";
@@ -16,7 +16,8 @@ export class QuizConductorComponent {
   poprawneOdpowiedzi = 0
 
   constructor(route: ActivatedRoute,
-              private quizService: QuizService) {
+              private quizService: QuizService,
+              private router: Router) {
     const id = +route.snapshot.params['id']
     this.quiz = this.quizService.findQuizById(id)
     this.aktualnePytanie = this.quiz.pytania[this.pytanieIndex]
@@ -29,5 +30,9 @@ export class QuizConductorComponent {
 
     this.pytanieIndex++
     this.aktualnePytanie = this.quiz.pytania[this.pytanieIndex]
+  }
+
+  navigateBack() {
+    this.router.navigate(['quiz'])
   }
 }

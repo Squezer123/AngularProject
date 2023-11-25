@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-content: center;
-  margin-top: 0;
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
@@ -35,5 +34,27 @@
       font-weight: bold;
       font-size: 28px;
     }
+  }
+
+  .koniec {
+    text-align: center;
+    color: whitesmoke;
+  }
+
+  .wynik {
+    text-align: center;
+    color: whitesmoke;
+  }
+
+  .back-button {
+    margin: 0 auto;
+    border: 0;
+    color: whitesmoke;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: blue;
+    width: fit-content;
   }
 }

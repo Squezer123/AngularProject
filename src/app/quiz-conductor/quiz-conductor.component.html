@@ -1,8 +1,16 @@
-<div class="container">
+<!-- quiz in progress -->
+<div *ngIf="pytanieIndex < quiz.pytania.length" class="container">
   <h1 class="pytanie-tresc">{{ aktualnePytanie.tresc }}</h1>
   <div class="odpowiedzi-container">
     <div *ngFor="let odpowiedz of aktualnePytanie.odpowiedzi; let i = index" class="odpowiedz" (click)="chooseAnswer(i)">
       {{ odpowiedz }}
     </div>
   </div>
+</div>
+
+<!-- quiz have ended -->
+<div *ngIf="pytanieIndex == quiz.pytania.length" class="container">
+  <h1 class="koniec">Koniec quizu!</h1>
+  <h2 class="wynik">Twój wynik to: {{ poprawneOdpowiedzi }} / {{ quiz.pytania.length }}</h2>
+  <button class="back-button" type="button" (click)="navigateBack()">Wróć do strony głównej</button>
 </div>
