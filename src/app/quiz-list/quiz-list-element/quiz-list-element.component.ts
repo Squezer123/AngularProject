@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Quiz } from "../../domain/quiz.model";
+import { QuizService } from "../../services/quiz.service";
 
 @Component({
   selector: 'app-quiz-list-element',
@@ -8,4 +9,11 @@ import { Quiz } from "../../domain/quiz.model";
 })
 export class QuizListElementComponent {
   @Input() public quiz: Quiz;
+
+  constructor(private quizService: QuizService) {
+  }
+
+  deleteQuiz() {
+    this.quizService.deleteQuizById(this.quiz.id)
+  }
 }

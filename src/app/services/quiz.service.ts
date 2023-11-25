@@ -86,5 +86,14 @@ export class QuizService {
   ]
   addQuiz(nazwa,kategoria,dataWygasniecia,pytania) {
     this.quizy.push(new Quiz(this.id++,nazwa,kategoria,dataWygasniecia,pytania));
+
+
+  deleteQuizById(id: number) {
+    let index = this.quizy.findIndex(quiz => quiz.id === id)
+
+    if(index !== -1) {
+      this.quizy.splice(index, 1)
+    }
+
   }
 }
