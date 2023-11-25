@@ -84,16 +84,20 @@ export class QuizService {
       ]
     ),
   ]
-  addQuiz(nazwa,kategoria,dataWygasniecia,pytania) {
-    this.quizy.push(new Quiz(this.id++,nazwa,kategoria,dataWygasniecia,pytania));
 
-}
-deleteQuizById(id: number) {
-  let index = this.quizy.findIndex(quiz => quiz.id === id)
-
-  if(index !== -1) {
-    this.quizy.splice(index, 1)
+  findQuizById(id: number): Quiz {
+      return this.quizy.find(quiz => quiz.id === id)
   }
 
-}}
+  deleteQuizById(id: number) {
+    let index = this.quizy.findIndex(quiz => quiz.id === id)
 
+    if (index !== -1) {
+      this.quizy.splice(index, 1)
+    }
+  }
+
+  addQuiz(nazwa, kategoria, dataWygasniecia, pytania) {
+    this.quizy.push(new Quiz(this.id++, nazwa, kategoria, dataWygasniecia, pytania));
+  }
+}

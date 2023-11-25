@@ -1,0 +1,60 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  background: deepskyblue;
+  padding: 2rem;
+
+  .pytanie-tresc {
+    text-align: center;
+    color: whitesmoke;
+  }
+
+  .odpowiedzi-container {
+    margin: 80px auto;
+    display: grid;
+    grid-template-columns: 250px 250px;
+    grid-template-rows: 150px 150px;
+    grid-row: auto;
+    grid-column-gap: 50px;
+    grid-row-gap: 40px;
+
+    .odpowiedz {
+      cursor: pointer;
+      background-color: #333;
+      border-radius: 10px;
+      color: whitesmoke;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 28px;
+    }
+  }
+
+  .koniec {
+    text-align: center;
+    color: whitesmoke;
+  }
+
+  .wynik {
+    text-align: center;
+    color: whitesmoke;
+  }
+
+  .back-button {
+    margin: 0 auto;
+    border: 0;
+    color: whitesmoke;
+    padding: 0.75rem;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    cursor: pointer;
+    background: blue;
+    width: fit-content;
+  }
+}
