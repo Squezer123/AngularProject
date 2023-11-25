@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="pytanie-tresc">{{ aktualnePytanie.tresc }}</h1>
   <div class="odpowiedzi-container">
-    <div *ngFor="let odpowiedz of aktualnePytanie.odpowiedzi">
+    <div *ngFor="let odpowiedz of aktualnePytanie.odpowiedzi; let i = index" class="odpowiedz" (click)="chooseAnswer(i)">
       {{ odpowiedz }}
     </div>
   </div>

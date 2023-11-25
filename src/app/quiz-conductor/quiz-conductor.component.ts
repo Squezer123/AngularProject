@@ -13,6 +13,7 @@ export class QuizConductorComponent {
   quiz: Quiz
   pytanieIndex = 0
   aktualnePytanie: Pytanie
+  poprawneOdpowiedzi = 0
 
   constructor(route: ActivatedRoute,
               private quizService: QuizService) {
@@ -21,4 +22,12 @@ export class QuizConductorComponent {
     this.aktualnePytanie = this.quiz.pytania[this.pytanieIndex]
   }
 
+  chooseAnswer(index: number) {
+    if(index == this.aktualnePytanie.poprawnaOdpowiedz) {
+      this.poprawneOdpowiedzi++
+    }
+
+    this.pytanieIndex++
+    this.aktualnePytanie = this.quiz.pytania[this.pytanieIndex]
+  }
 }
