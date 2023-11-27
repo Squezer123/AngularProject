@@ -2,7 +2,7 @@
   <h2>{{ quiz.nazwa }}</h2>
   <p>Kategoria: {{ quiz.kategoria }}</p>
   <p>Liczba pytań: {{ quiz.pytania.length }}</p>
-  <p>Wygasa: {{ quiz.dataWygasniecia }}</p>
+  <p>Wygasa: {{ printDate() }}</p>
 
   <button type="button" class="start-button" (click)="startQuiz()">Rozpocznij quiz</button>
   <button type="button" class="delete-button" (click)="deleteQuiz()">Usuń quiz</button>
