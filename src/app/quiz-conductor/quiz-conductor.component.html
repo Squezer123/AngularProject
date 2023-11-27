@@ -11,6 +11,6 @@
 <!-- quiz have ended -->
 <div *ngIf="pytanieIndex == quiz.pytania.length" class="container">
   <h1 class="koniec">Koniec quizu!</h1>
-  <h2 class="wynik">Twój wynik to: {{ poprawneOdpowiedzi }} / {{ quiz.pytania.length }}</h2>
+  <h2 class="wynik">Udzieliłeś/aś poprawnej odpowiedzi na {{ poprawneOdpowiedzi }} z {{ quiz.pytania.length }} pytań</h2>
   <button class="back-button" type="button" (click)="navigateBack()">Wróć do strony głównej</button>
 </div>
