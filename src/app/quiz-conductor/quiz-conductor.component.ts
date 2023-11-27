@@ -14,6 +14,7 @@ export class QuizConductorComponent {
   pytanieIndex = 0
   aktualnePytanie: Pytanie
   poprawneOdpowiedzi = 0
+  chosenAnswer = -1;
 
   constructor(route: ActivatedRoute,
               private quizService: QuizService,
@@ -24,12 +25,21 @@ export class QuizConductorComponent {
   }
 
   chooseAnswer(index: number) {
+    if(this.chosenAnswer !== -1) {
+      return;
+    }
+
     if(index == this.aktualnePytanie.poprawnaOdpowiedz) {
       this.poprawneOdpowiedzi++
     }
 
+    this.chosenAnswer = index;
+  }
+
+  setNextQuestion() {
     this.pytanieIndex++
     this.aktualnePytanie = this.quiz.pytania[this.pytanieIndex]
+    this.chosenAnswer = -1;
   }
 
   navigateBack() {
