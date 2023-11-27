@@ -3,8 +3,8 @@
   display: flex;
   flex-direction: column;
   align-content: center;
+  justify-content: center;
   padding: 2rem;
-  padding-top: 9%;
   width: 100%;
   height: 100vh;
   max-width: 1200px;
@@ -38,6 +38,14 @@
       border: solid whitesmoke 1px;
       box-shadow: black 2px 2px 2px;
     }
+
+    .odpowiedz-poprawna {
+      background: green;
+    }
+
+    .odpowiedz-niepoprawna {
+      background: red;
+    }
   }
 
   .koniec {
@@ -51,7 +59,7 @@
     color: whitesmoke;
   }
 
-  .back-button {
+  .btn {
     color: whitesmoke;
     padding: 0.75rem;
     border-radius: 0.25rem;
@@ -65,7 +73,7 @@
     margin: 0 auto;
   }
 
-  .back-button:hover {
+  .btn:hover {
     background: blue;
   }
 }
