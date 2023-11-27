@@ -13,6 +13,7 @@
 
     <ng-container formArrayName="pytania">
       <ng-container *ngFor="let pytanieForm of pytania.controls; let i=index" [formGroupName]="i">
+          <h2>Pytanie numer {{i+1}}</h2>
           <label>Podaj treść</label><br>
           <input type="text" formControlName="tresc"><br>
           <label>Podaj odpowiedzi</label><br>
@@ -22,10 +23,12 @@
           <input type="text" formControlName="odp4"><br>
           <label>Podaj numer poprawnej odpowiedzi</label><br>
           <input type="number" [disabled]="form.invalid" formControlName="nrPoprawnejOdp"><br>
+          <button type="button" (click)="removePytanie(i)">Usuń pytanie</button><br>
       </ng-container>
     </ng-container>
 
     <button type="button" (click)="addPytanie()">Dodaj pytanie</button>
     <button type="submit" [disabled]=form.invalid>Wyślij</button>
+    <button type="button" (click)="return()">Powrót</button>
   </form>
 </div>

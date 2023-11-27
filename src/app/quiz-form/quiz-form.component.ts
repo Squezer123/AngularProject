@@ -58,7 +58,7 @@ export class QuizFormComponent {
       console.log(this.form.value)
       const listaPytan: Pytanie[] = [];
       for(let element of this.form.value.pytania) {
-        listaPytan.push(new Pytanie(element.tresc,[element.odp1,element.odp2,element.odp3,element.odp4],1))
+        listaPytan.push(new Pytanie(element.tresc,[element.odp1,element.odp2,element.odp3,element.odp4],element.nrPoprawnejOdp-1));
       }
 
         this.quizService.addQuiz(this.form.value.nazwa,this.form.value.kategoria,this.form.value.dataWygasniecia,listaPytan);
@@ -67,5 +67,11 @@ export class QuizFormComponent {
     else {
       console.log("Pusty validator");
     }
+  }
+  return() {
+    this.router.navigate([`/quiz-list`]);
+  }
+  removePytanie(index) {
+    this.pytania.removeAt(index);
   }
 }

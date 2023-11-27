@@ -22,4 +22,23 @@ export class QuizListElementComponent {
   startQuiz() {
     this.router.navigate(['quiz', this.quiz.id, 'conduct'])
   }
+  printDate(): string {
+    const el: string[] = ["dd","mm","yyyy"];
+    let retDate = '';
+    let tmp: number;
+    el.forEach((element, index) => {
+        if (index > 0) { retDate += '-'; }
+        switch (element) {
+          case 'dd': tmp = this.quiz.dataWygasniecia.getDate() + 1; break;
+          case 'mm': tmp = this.quiz.dataWygasniecia.getMonth() + 1; break;
+          default: retDate += this.quiz.dataWygasniecia.getFullYear();
+        }
+        if (element !== 'yyyy') {
+          tmp < 10 ? retDate += '0' + tmp : retDate += tmp;
+        }
+      }
+    );
+
+    return retDate;
+  }
 }
