@@ -68,4 +68,7 @@ export class QuizFormComponent {
       console.log("Pusty validator");
     }
   }
+  return() {
+    this.router.navigate([`/quiz-list`]);
+  }
 }
