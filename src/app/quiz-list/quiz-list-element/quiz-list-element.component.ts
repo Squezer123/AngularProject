@@ -29,7 +29,7 @@ export class QuizListElementComponent {
     el.forEach((element, index) => {
         if (index > 0) { retDate += '-'; }
         switch (element) {
-          case 'dd': tmp = this.quiz.dataWygasniecia.getDate() + 1; break;
+          case 'dd': tmp = this.quiz.dataWygasniecia.getDate(); break;
           case 'mm': tmp = this.quiz.dataWygasniecia.getMonth() + 1; break;
           default: retDate += this.quiz.dataWygasniecia.getFullYear();
         }
@@ -40,5 +40,8 @@ export class QuizListElementComponent {
     );
 
     return retDate;
+  }
+  editQuiz () {
+    this.router.navigate([`quiz`,this.quiz.id,'edit']);
   }
 }

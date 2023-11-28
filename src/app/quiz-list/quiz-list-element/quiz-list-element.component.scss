@@ -47,4 +47,11 @@
     margin-right: 0.5rem;
   }
 }
+.edit-button {
+  @include button;
+  background: #504099;
+  border: solid whitesmoke 1px;
+  box-shadow: black 2px 2px 2px;
+  margin-right: 0.5rem;
+}
 

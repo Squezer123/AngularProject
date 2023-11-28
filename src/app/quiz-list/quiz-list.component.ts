@@ -14,7 +14,7 @@ export class QuizListComponent {
   constructor(private quizService: QuizService, private router: Router) {
     this.quizy = this.quizService.quizy;
   }
-  click () {
+  addQuiz () {
     this.router.navigate([`/quiz-form`]);
   }
 }
