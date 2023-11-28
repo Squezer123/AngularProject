@@ -10,7 +10,8 @@ const routes: Routes = [
   { path: 'quiz-form', component: QuizFormComponent },
   { path: 'quiz-list', component: QuizListComponent },
   { path: 'quiz', component: QuizListComponent },
-  { path: 'quiz/:id/conduct', component: QuizConductorComponent }
+  { path: 'quiz/:id/conduct', component: QuizConductorComponent },
+  { path: 'quiz/:id/edit', component: QuizFormComponent }
 ];
 
 @NgModule({

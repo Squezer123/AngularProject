@@ -4,7 +4,7 @@ import { Pytanie } from "./pytanie.model";
 export class Quiz {
 
   constructor(private _id: number,
-              private _nazwa: String,
+              private _nazwa: string,
               private _kategoria: Kategoria,
               private _dataWygasniecia: Date,
               private _pytania: Pytanie[]) {

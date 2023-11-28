@@ -1,7 +1,7 @@
 export class Pytanie {
 
-  constructor(private _tresc: String,
-              private _odpowiedzi: String[],
+  constructor(private _tresc: string,
+              private _odpowiedzi: string[],
               // PoprawnaOdpowiedz indeksujemy od 0
               // Czyli może mieć wartość z przedziału od 0 do 3
               private _poprawnaOdpowiedz: number) {

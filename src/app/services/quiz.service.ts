@@ -100,4 +100,7 @@ export class QuizService {
   addQuiz(nazwa, kategoria, dataWygasniecia, pytania) {
     this.quizy.push(new Quiz(this.id++, nazwa, kategoria, dataWygasniecia, pytania));
   }
+  editQuiz(id,nazwa, kategoria, dataWygasniecia, pytania) {
+    this.quizy[id-1] = new Quiz(id,nazwa,kategoria,dataWygasniecia,pytania);
+  }
 }
