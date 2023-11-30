@@ -1,5 +1,5 @@
 <div class="container">
-  <h2>{{ quiz.nazwa }}</h2>
+  <h2>{{ quiz.nazwa | titlecase }}</h2>
   <p>Kategoria: {{ quiz.kategoria }}</p>
   <p>Liczba pytań: {{ quiz.pytania.length }}</p>
   <p>Wygasa: {{ printDate() }}</p>
