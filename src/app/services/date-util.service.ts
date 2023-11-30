@@ -26,4 +26,8 @@ export class DateUtilService {
 
     return retDate;
   }
+
+  getActualDate() {
+    return new Date();
+  }
 }
