@@ -82,6 +82,62 @@ export class QuizService {
         ),
       ]
     ),
+    new Quiz(
+      3,
+      'Najlepszy quiz o filmach ever',
+      Kategoria.FILMY,
+      new Date(2024, 11, 11, 11, 11),
+      [
+        new Pytanie(
+          'Który film zdobył nagrodę Oscarową za Najlepszy Film w 2020 roku?',
+          [
+            'Joker',
+            '1917',
+            'Parasite',
+            'La La Land'
+          ],
+          2
+        ),
+        new Pytanie(
+          'Który z aktorów zagrał główną rolę w filmie "The Revenant," za którą zdobył Oscara w 2016 roku?',
+          [
+            'Leonardo DiCaprio',
+            'Brad Pitt',
+            'Joaquin Phoenix',
+            'Eddie Redmayne'
+          ],
+          0
+        ),
+      ]
+    ),
+    new Quiz(
+      4,
+      'Najlepszy quiz o historii ever',
+      Kategoria.HISTORIA,
+      new Date(2024, 11, 11, 11, 11),
+      [
+        new Pytanie(
+          'Który wydarzenie rozpoczęło się 28 lipca 1914 roku i było bezpośrednią przyczyną wybuchu I wojny światowej?',
+          [
+            'Atak na Pearl Harbor',
+            'Zamach w Sarajewie',
+            'Zdobycie Berlina',
+            'Rewolucja Październikowa'
+          ],
+          1
+        ),
+        new Pytanie(
+          'Kto był liderem ruchu oporu w czasie II wojny światowej, znany z kryptonimu "Bolek"?',
+          [
+            'Winston Churchill',
+            'Charles de Gaulle',
+            'Lech Wałęsa',
+            'Jan Karski'
+          ],
+          0
+        ),
+      ]
+    ),
   ]
   id: number = this.quizy.length+1;
 
