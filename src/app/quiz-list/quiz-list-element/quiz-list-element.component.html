@@ -1,8 +1,8 @@
 <div class="container">
   <div class="content">
-    <p appCategory [category]="quiz.kategoria">{{ quiz.kategoria }}</p>
+    <p appCategory [category]="quiz.kategoria" class="kategoria">{{ quiz.kategoria }}</p>
     <h2>{{ quiz.nazwa | titlecase }}</h2>
-    <p>Wygasa: {{ dateUtil.toFormattedString(quiz.dataWygasniecia) }}</p>
+    <small>Wygasa {{ dateUtil.toFormattedString(quiz.dataWygasniecia) }}</small>
   </div>
 
   <div class="buttons">

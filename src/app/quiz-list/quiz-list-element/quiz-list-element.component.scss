@@ -15,6 +15,7 @@
 .container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   border: solid whitesmoke 1px;
   border-radius: 10px;
   background: #504099;
@@ -26,6 +27,11 @@
 
   .content {
     text-align: left;
+    margin-bottom: 1rem;
+
+    .kategoria {
+      font-weight: bold;
+    }
   }
 
   .buttons {
