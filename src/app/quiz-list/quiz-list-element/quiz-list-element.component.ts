@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Quiz } from "../../domain/quiz.model";
 import { QuizService } from "../../services/quiz.service";
 import { Router } from "@angular/router";
+import { DateUtilService } from "../../services/date-util.service";
 
 @Component({
   selector: 'app-quiz-list-element',
@@ -12,7 +13,8 @@ export class QuizListElementComponent {
   @Input() public quiz: Quiz;
 
   constructor(private quizService: QuizService,
-              private router: Router) {
+              private router: Router,
+              public dateUtil: DateUtilService) {
   }
 
   deleteQuiz() {
@@ -22,25 +24,7 @@ export class QuizListElementComponent {
   startQuiz() {
     this.router.navigate(['quiz', this.quiz.id, 'conduct'])
   }
-  printDate(): string {
-    const el: string[] = ["dd","mm","yyyy"];
-    let retDate = '';
-    let tmp: number;
-    el.forEach((element, index) => {
-        if (index > 0) { retDate += '-'; }
-        switch (element) {
-          case 'dd': tmp = this.quiz.dataWygasniecia.getDate(); break;
-          case 'mm': tmp = this.quiz.dataWygasniecia.getMonth() + 1; break;
-          default: retDate += this.quiz.dataWygasniecia.getFullYear();
-        }
-        if (element !== 'yyyy') {
-          tmp < 10 ? retDate += '0' + tmp : retDate += tmp;
-        }
-      }
-    );
 
-    return retDate;
-  }
   editQuiz () {
     this.router.navigate([`quiz`,this.quiz.id,'edit']);
   }

@@ -1,10 +1,18 @@
 <div class="container">
-  <h2>{{ quiz.nazwa }}</h2>
-  <p>Kategoria: {{ quiz.kategoria }}</p>
-  <p>Liczba pytań: {{ quiz.pytania.length }}</p>
-  <p>Wygasa: {{ printDate() }}</p>
+  <div class="content">
+    <p appCategory [category]="quiz.kategoria">{{ quiz.kategoria }}</p>
+    <h2>{{ quiz.nazwa | titlecase }}</h2>
+    <p>Wygasa: {{ dateUtil.toFormattedString(quiz.dataWygasniecia) }}</p>
+  </div>
 
-  <button type="button" class="start-button" (click)="startQuiz()">Rozpocznij quiz</button>
-  <button type="button" class="edit-button" (click)="editQuiz()">Edytuj quiz</button>
-  <button type="button" class="delete-button" (click)="deleteQuiz()">Usuń quiz</button>
+  <div class="buttons">
+    <button
+      type="button"
+      class="start-button"
+      (click)="startQuiz()"
+      [hidden]="dateUtil.getActualDate() >= quiz.dataWygasniecia"
+    >Rozpocznij quiz</button>
+    <button type="button" class="edit-button" (click)="editQuiz()">Edytuj quiz</button>
+    <button type="button" class="delete-button" (click)="deleteQuiz()">Usuń quiz</button>
+  </div>
 </div>

@@ -5,7 +5,7 @@ import { Kategoria } from "../domain/kategoria.enum";
 import { QuizService } from "../services/quiz.service";
 import {ActivatedRoute, Router} from "@angular/router";
 import {Pytanie} from "../domain/pytanie.model";
-import {Quiz} from "../domain/quiz.model";
+import { formatDate } from "@angular/common";
 
 @Component({
   selector: 'app-quiz-form',
@@ -18,10 +18,13 @@ export class QuizFormComponent {
 
   id: number
 
-  constructor(private fb: FormBuilder, private quizService: QuizService, private router: Router, route: ActivatedRoute) {
+  constructor(private fb: FormBuilder,
+              private quizService: QuizService,
+              private router: Router,
+              route: ActivatedRoute) {
     this.kategorie = Object.values(Kategoria);
 
-    let nazwa='',kategoria='';
+    let nazwa='', kategoria='', dataWygasniecia='';
 
     this.id = +route.snapshot.params['id'];
     let quiz;
@@ -30,14 +33,14 @@ export class QuizFormComponent {
 
       nazwa = quiz.nazwa;
       kategoria = quiz.kategoria;
-        //dataWygasniecia = this.quiz.dataWygasniecia.getFullYear();
+      dataWygasniecia = formatDate(quiz.dataWygasniecia, 'yyyy-MM-dd', 'en');
     }
 
     this.form = this.fb.group({
       nazwa: new FormControl(nazwa, [Validators.required, Validators.minLength(3),
         Validators.maxLength(50),startsWithUppercase]),
       kategoria: new FormControl(kategoria, Validators.required),
-      dataWygasniecia: new FormControl('', Validators.required),
+      dataWygasniecia: new FormControl(dataWygasniecia, Validators.required),
       pytania: this.fb.array([], Validators.required)
     });
 
