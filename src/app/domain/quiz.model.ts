@@ -29,4 +29,25 @@ export class Quiz {
   get pytania() {
     return this._pytania;
   }
+
+
+  set id(value: number) {
+    this._id = value;
+  }
+
+  set nazwa(value: string) {
+    this._nazwa = value;
+  }
+
+  set kategoria(value: Kategoria) {
+    this._kategoria = value;
+  }
+
+  set dataWygasniecia(value: Date) {
+    this._dataWygasniecia = value;
+  }
+
+  set pytania(value: Pytanie[]) {
+    this._pytania = value;
+  }
 }

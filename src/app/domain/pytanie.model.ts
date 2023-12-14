@@ -18,4 +18,16 @@ export class Pytanie {
   get poprawnaOdpowiedz() {
     return this._poprawnaOdpowiedz;
   }
+
+  set tresc(value: string) {
+    this._tresc = value;
+  }
+
+  set odpowiedzi(value: string[]) {
+    this._odpowiedzi = value;
+  }
+
+  set poprawnaOdpowiedz(value: number) {
+    this._poprawnaOdpowiedz = value;
+  }
 }
