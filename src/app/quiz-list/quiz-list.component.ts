@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class QuizListComponent {
   quizy: Quiz[];
+  nazwaDoFiltrowania: string = "";
 
   constructor(private quizService: QuizService, private router: Router) {
     this.quizy = this.quizService.quizy;

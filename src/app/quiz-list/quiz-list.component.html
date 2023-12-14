@@ -1,8 +1,11 @@
 <div class="container">
   <h1>Quizy.pl</h1>
   <div class="options">
-    <router-outlet class="AddQuiz"><button (click)="addQuiz()">Dodaj quiz</button></router-outlet>
+    <button class="AddQuiz" (click)="addQuiz()">Dodaj quiz</button>
   </div>
 
-  <app-quiz-list-element *ngFor="let quiz of quizy | filterByName:'mod'" [quiz]="quiz"></app-quiz-list-element>
+  <div class="wyszukiwarka-container">
+    <input type="text" placeholder="Filtruj według nazwy" [(ngModel)]="nazwaDoFiltrowania">
+  </div>
+  <app-quiz-list-element *ngFor="let quiz of quizy | filterByName:nazwaDoFiltrowania" [quiz]="quiz"></app-quiz-list-element>
 </div>
