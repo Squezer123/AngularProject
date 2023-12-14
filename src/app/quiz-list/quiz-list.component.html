@@ -4,5 +4,5 @@
     <router-outlet class="AddQuiz"><button (click)="addQuiz()">Dodaj quiz</button></router-outlet>
   </div>
 
-  <app-quiz-list-element *ngFor="let quiz of quizy" [quiz]="quiz"></app-quiz-list-element>
+  <app-quiz-list-element *ngFor="let quiz of quizy | filterByName:'mod'" [quiz]="quiz"></app-quiz-list-element>
 </div>

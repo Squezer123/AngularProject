@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { QuizConductorComponent } from './quiz-conductor/quiz-conductor.component';
 import { CategoryDirective } from './directives/category.directive';
 import { AnswerButtonComponent } from './quiz-conductor/answer-button/answer-button.component';
+import { FilterByNamePipe } from './pipes/filter-by-name.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AnswerButtonComponent } from './quiz-conductor/answer-button/answer-but
     QuizFormComponent,
     QuizConductorComponent,
     CategoryDirective,
-    AnswerButtonComponent
+    AnswerButtonComponent,
+    FilterByNamePipe
   ],
   imports: [
     BrowserModule,
