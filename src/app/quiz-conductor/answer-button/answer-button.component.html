@@ -1,0 +1,8 @@
+<div
+     class="odpowiedz"
+     (click)="chooseAnswer()"
+     [class.odpowiedz-poprawna]="chosenAnswer !== -1 && czyPoprawna"
+     [class.odpowiedz-niepoprawna]="chosenAnswer === index && !czyPoprawna"
+>
+  {{ tresc }}
+</div>

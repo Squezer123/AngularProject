@@ -9,6 +9,7 @@ import { QuizFormComponent } from './quiz-form/quiz-form.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { QuizConductorComponent } from './quiz-conductor/quiz-conductor.component';
 import { CategoryDirective } from './directives/category.directive';
+import { AnswerButtonComponent } from './quiz-conductor/answer-button/answer-button.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CategoryDirective } from './directives/category.directive';
     QuizListElementComponent,
     QuizFormComponent,
     QuizConductorComponent,
-    CategoryDirective
+    CategoryDirective,
+    AnswerButtonComponent
   ],
   imports: [
     BrowserModule,
