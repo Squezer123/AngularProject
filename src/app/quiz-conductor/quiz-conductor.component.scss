@@ -24,28 +24,6 @@
     grid-row: auto;
     grid-column-gap: 50px;
     grid-row-gap: 40px;
-
-    .odpowiedz {
-      cursor: pointer;
-      background-color: #504099;
-      border-radius: 10px;
-      color: white;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 28px;
-      border: solid whitesmoke 1px;
-      box-shadow: black 2px 2px 2px;
-    }
-
-    .odpowiedz-poprawna {
-      background: green;
-    }
-
-    .odpowiedz-niepoprawna {
-      background: red;
-    }
   }
 
   .koniec {
