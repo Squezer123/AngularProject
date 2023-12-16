@@ -3,7 +3,6 @@
   <form [formGroup]="form" (ngSubmit)="register()">
     <label>Podaj nazwe</label><br>
     <input type="text" formControlName="nazwa"><br>
-    <div *ngIf="nazwa.invalid && (nazwa.dirty || nazwa.touched)" class="error-message">Nazwa jest wymagana</div>
     <label>Wybierz kategorie</label><br>
     <select formControlName="kategoria">
       <option *ngFor="let kategoriaEl of kategorie" [value]="kategoriaEl">{{kategoriaEl}}</option>
@@ -28,7 +27,7 @@
     </ng-container>
 
     <button type="button" class="btn" (click)="addPytanie()">Dodaj pytanie</button>
-    <button type="submit" [disabled]=form.invalid>Wyślij</button>
+    <button type="submit" class="btn" [disabled]=form.invalid>Wyślij</button>
     <button type="button" class="btn" (click)="return()">Powrót</button>
   </form>
 </div>

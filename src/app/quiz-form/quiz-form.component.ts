@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
-import { startsWithUppercase } from '../validators/custom-validators';
+import {containsOnlyLettersNumbersAndSpaces, dateFromPast, startsWithUppercase, arraySizeValidator} from '../validators/custom-validators';
 import { Kategoria } from "../domain/kategoria.enum";
 import { QuizService } from "../services/quiz.service";
 import {ActivatedRoute, Router} from "@angular/router";
@@ -38,10 +38,10 @@ export class QuizFormComponent {
 
     this.form = this.fb.group({
       nazwa: new FormControl(nazwa, [Validators.required, Validators.minLength(3),
-        Validators.maxLength(50),startsWithUppercase]),
+        Validators.maxLength(50),startsWithUppercase,containsOnlyLettersNumbersAndSpaces]),
       kategoria: new FormControl(kategoria, Validators.required),
-      dataWygasniecia: new FormControl(dataWygasniecia, Validators.required),
-      pytania: this.fb.array([], Validators.required)
+      dataWygasniecia: new FormControl(dataWygasniecia, [Validators.required,dateFromPast]),
+      pytania: this.fb.array([], [Validators.required, arraySizeValidator(2,12)])
     });
 
     if(!isNaN(this.id)) {

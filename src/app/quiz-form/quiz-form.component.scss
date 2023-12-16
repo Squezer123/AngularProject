@@ -30,3 +30,9 @@
   box-shadow: black 2px 2px 2px;
   margin: 10px;
 }
+.btn:disabled {
+  background: #b99aff;
+  cursor: not-allowed;
+  border: solid #a0a0a0 1px;
+  box-shadow: none;
+}
