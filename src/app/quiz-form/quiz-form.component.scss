@@ -1,7 +1,9 @@
 .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
   margin-top: 1.5rem;
-  width: 100%;
-  max-width: 1200px;
+  max-width: 400px;
   margin-left: auto;
   margin-right: auto;
   border-radius: 12px;
@@ -9,8 +11,7 @@
   text-align: center;
   color: whitesmoke;
   padding: 2rem;
-  font-size: 24px;
-  font-weight: bold;
+
 }
 .error-message {
   color: red;
@@ -29,10 +30,40 @@
   border: solid whitesmoke 1px;
   box-shadow: black 2px 2px 2px;
   margin: 10px;
+  
+}
+.btn:hover{
+  background: #473886;
 }
 .btn:disabled {
   background: #b99aff;
   cursor: not-allowed;
   border: solid #a0a0a0 1px;
   box-shadow: none;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+form input{
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  outline: none;
+}
+
+form select{
+  min-width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  outline: none;
+}
+
+label{
+  font-size: 24px;
+  font-weight: bold;
+  text-align: start !important;
 }
