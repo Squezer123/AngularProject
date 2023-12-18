@@ -1,11 +1,14 @@
 <div class="container">
-  <h1>Quizy.pl</h1>
-  <div class="options">
-    <button class="AddQuiz" (click)="addQuiz()">Dodaj quiz</button>
-  </div>
-
-  <div class="wyszukiwarka-container">
-    <input type="text" placeholder="Filtruj według nazwy" [(ngModel)]="nazwaDoFiltrowania">
-  </div>
+  <div class="navbar">
+    <h1>Quizy.pl</h1>
+    <div class="right">
+      <div class="options">
+        <button class="AddQuiz" (click)="addQuiz()">Dodaj quiz</button>
+      </div>
+      <div class="wyszukiwarka-container">
+        <input type="text" placeholder="Filtruj według nazwy" [(ngModel)]="nazwaDoFiltrowania">
+      </div></div>
+    </div>
+  <div class="margin"> </div>
   <app-quiz-list-element *ngFor="let quiz of quizy | filterByName:nazwaDoFiltrowania" [quiz]="quiz"></app-quiz-list-element>
 </div>

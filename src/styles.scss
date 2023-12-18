@@ -4,7 +4,7 @@ $background-color: #313866;
 
 
 body, html {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', sans-serif !important;
   margin: 0;
   padding: 0;
   background-color: $background-color;

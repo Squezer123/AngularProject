@@ -25,9 +25,6 @@ h1{
 }
 
 button{
-  position: absolute;
-  top: 20px;
-  right: 100px;
   background-color: #504099;
   height: 50px;
   font-size: 1rem !important; 
@@ -45,4 +42,51 @@ button:hover {
   transform: scale(1.1);
   box-shadow: 2px 2px 2px black;
   transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out, cursor 0.3s ease-in-out;
+}
+
+.wyszukiwarka-container{
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-left: 1rem;
+}
+
+.wyszukiwarka-container input{
+  color: white;
+  background-color: #504099;
+  position: absolute;
+  border: 1px solid white;
+  border-radius: 4px;
+  margin-bottom: 20px !important;
+}
+
+.wyszukiwarka-container input:focus{
+  font-weight: bold;
+  background-color: #504099;
+  border-radius: 4px;
+  border: 3px solid white;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-out;
+}
+
+.navbar{
+  position: fixed;
+  min-width: 100vw;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background-color: #313866;
+  justify-content: space-evenly;
+}
+
+.right{
+  display: flex;
+  align-items: center;
+  
+}
+
+.margin{
+ height: 100px;
 }
