@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Quiz } from "../domain/quiz.model";
 import { Kategoria } from "../domain/kategoria.enum";
 import { Pytanie } from "../domain/pytanie.model";
+import { HttpService } from "./http.service";
 
 @Injectable({ providedIn: 'root' })
 export class QuizService {
@@ -140,6 +141,19 @@ export class QuizService {
     ),
   ]
   id: number = this.quizy.length+1;
+
+  constructor(private httpService: HttpService) {
+    this.httpService.getAllQuizzes().subscribe(quizy => {
+      while (this.quizy.length > 0) {
+        this.quizy.pop();
+      }
+      let zmapowaneQuizy = quizy.map(quiz => {
+        let quizObject = new Quiz(quiz.id, quiz.nazwa, Kategoria[quiz.kategoria], new Date(quiz.dataWygasniecia), quiz.pytania);
+        return quizObject;
+      });
+      this.quizy.push(...zmapowaneQuizy);
+    });
+  }
 
   findQuizById(id: number): Quiz {
       return this.quizy.find(quiz => quiz.id === id)

@@ -11,6 +11,7 @@ import { QuizConductorComponent } from './quiz-conductor/quiz-conductor.componen
 import { CategoryDirective } from './directives/category.directive';
 import { AnswerButtonComponent } from './quiz-conductor/answer-button/answer-button.component';
 import { FilterByNamePipe } from './pipes/filter-by-name.pipe';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FilterByNamePipe } from './pipes/filter-by-name.pipe';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
