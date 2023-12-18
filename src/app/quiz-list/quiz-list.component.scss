@@ -18,6 +18,7 @@
 }
 h1{
   color: #974EC3;
+  margin-left: -50px;
 }
 .options h2{
   color: #974EC3;
@@ -47,7 +48,7 @@ button:hover {
 .wyszukiwarka-container{
   justify-content: center;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   margin-left: 1rem;
 }
 
@@ -57,6 +58,7 @@ button:hover {
   position: absolute;
   border: 1px solid white;
   border-radius: 4px;
+  padding: 5px;
   margin-bottom: 20px !important;
 }
 
@@ -65,6 +67,7 @@ button:hover {
   background-color: #504099;
   border-radius: 4px;
   border: 3px solid white;
+  
   outline: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   transition: all 0.2s ease-out;
