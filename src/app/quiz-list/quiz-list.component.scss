@@ -36,6 +36,7 @@ button{
   padding: 10px 20px;
   text-align: inherit;
   font: inherit;
+  margin-left: 200px;
 }
 
 button:hover {
@@ -49,10 +50,10 @@ button:hover {
   justify-content: center;
   align-items: center;
   margin-bottom: 25px;
-  margin-left: 1rem;
 }
 
 .wyszukiwarka-container input{
+  
   color: white;
   background-color: #504099;
   position: absolute;
@@ -86,8 +87,10 @@ button:hover {
 
 .right{
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  
+  width: 400px;
 }
 
 .margin{
