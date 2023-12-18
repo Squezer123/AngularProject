@@ -6,7 +6,7 @@ import { Quiz } from "../domain/quiz.model";
 })
 export class FilterByNamePipe implements PipeTransform {
 
-  transform(quizy: Quiz[], nazwa: string): Quiz[] {
+  transform(quizy: Quiz[], nazwa: string = ""): Quiz[] {
     if(nazwa === "") {
       return quizy;
     }
